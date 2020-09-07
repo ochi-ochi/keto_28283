@@ -1,0 +1,27 @@
+<div class="loginPage">
+  <div class="container">
+    <header>
+    <div></div>
+        <ul class="header_list">
+            <li><%= link_to "投稿", new_article_path %></li>
+            <li><%= link_to "マイページ", "#" %></li>
+        </ul>
+    
+    <div></div>
+    </header>
+    <div class="loginPage_contents">
+      <h1 class="h3 loginPage_contents_title">新しいマッチを見つけよう</h1>
+       <% if user_signed_in?%>
+          <div class="navi_btn">
+              <%= link_to "見送り", "#", class: "btn loginPage_contents_btn" %>
+            　<%= link_to "キープ", "#", class: "btn loginPage_contents_btn" %>
+          </div>
+      <%else%> 
+          <div class="navi_btn">
+             <%= link_to "新規登録", new_user_registration_path, class: "btn loginPage_contents_btn" %>
+            <%= link_to "ログイン", new_user_session_path, class: "btn loginPage_contents_btn" %>
+          </div>
+     <%end%>
+    </div>
+  </div>
+</div>
