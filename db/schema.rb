@@ -38,8 +38,10 @@ ActiveRecord::Schema.define(version: 2020_09_07_095617) do
     t.string "fat"
     t.string "carbo"
     t.text "introduction", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

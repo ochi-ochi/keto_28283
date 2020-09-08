@@ -5,7 +5,16 @@ class ArticlesController < ApplicationController
     end
 
     def new
-        @article = Article.new
+         @article = Article.new
+    end
+
+    def create
+        @article = Article.create(article_params)
+        if @article.save
+            redirect_to action: :index
+        else
+            redirect_to action: :new
+        end
     end
 
     def show
@@ -17,4 +26,9 @@ class ArticlesController < ApplicationController
           redirect_to action: :index
         end
     end
+
+    def article_params
+        params.require(:article).permit(:name,:protein,:fat,:carbo,:introduction,:image).merge(user_id: current_user.id)
+    end
+
 end
