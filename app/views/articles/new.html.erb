@@ -1,14 +1,3 @@
 <div class="contents row">
-  <div class="container">
-    <%= form_with(model: @article, local: true) do |f| %>
-      <h3>投稿する</h3>
-      <div class="input_form">
-       <%= f.file_field :image, class: "form_image", placeholder: "画像" %>
-       <%= f.text_field :protein, class: "form_protein",placeholder: "タンパク質" %>
-       <%= f.text_field :fat, class: "form_fat", placeholder: "脂質" %>
-       <%= f.text_field :carbo,  class: "form_carbo",placeholder: "炭水化物" %>
-       <%= f.text_area :introduction, class: "form_introf", form_placeholder: "説明", rows: "10" %>
-       <%= f.submit "SEND" %>
-    <% end %>
-  </div>
+  <%= render partial: 'newedit.html.erb', locals: { article: @article } %>
 </div>
