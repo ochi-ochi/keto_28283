@@ -4,7 +4,7 @@
     <div></div>
         <ul class="header_list">
             <li><%= link_to "投稿", new_article_path %></li>
-            <li><%= link_to "マイページ", "#" %></li>
+            <li><%= link_to "マイページ", users_path %></li>
         </ul>
     
     <div></div>
@@ -14,12 +14,12 @@
        <% if user_signed_in?%>
           <div class="navi_btn">
               <%= link_to "見送り", "#", class: "btn loginPage_contents_btn" %>
-            　<%= link_to "キープ", "#", class: "btn loginPage_contents_btn" %>
+              <%= link_to "キープ", "#", class: "btn loginPage_contents_btn" %>
           </div>
       <%else%> 
           <div class="navi_btn">
              <%= link_to "新規登録", new_user_registration_path, class: "btn loginPage_contents_btn" %>
-            <%= link_to "ログイン", new_user_session_path, class: "btn loginPage_contents_btn" %>
+             <%= link_to "ログイン", new_user_session_path, class: "btn loginPage_contents_btn" %>
           </div>
      <%end%>
     </div>

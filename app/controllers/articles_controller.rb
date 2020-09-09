@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
     end
 
     def show
+        @articles = Article.find(:id)
     end
 
     private
