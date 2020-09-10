@@ -1,24 +1,58 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション名
 
-Things you may want to cover:
+## KetoKeep
 
-* Ruby version
+糖質制限やケトジェニック中の食事を投稿して、新しい発見をしてKeepしましょう
 
-* System dependencies
+# 目的
 
-* Configuration
+糖質制限やケトジェニック中に使用した食材や料理を写真で投稿しましょう。
+他のユーザーが投稿した写真を選んでkeepして、たくさんの選択肢がある喜びを感じよう。
 
-* Database creation
+# テストユーザー
 
-* Database initialization
+ID: test@gmail.com
+pass:000ppp
 
-* How to run the test suite
+# 利用方法
+ユーザー登録が必要です。上記のテストユーザーを使用してください。
+投稿の際には画像が一枚必須です。栄養成分もわかる場合は記入してください。
+トップページで他のユーザーが投稿した画像を選択しましょう。
+マイページから投稿とkeepの一覧をみることができます。
 
-* Services (job queues, cache servers, search engines, etc.)
+# 解決したい課題
+糖質制限やケトジェニックは続けるのが大変です。特に何が食べられるか、延々にインターネットとにらめっこしなくてはなりません。
+そうしている内に美味しそうなケーキの画像に行きついて意思が崩れてしまうのです。
+食事制限していても食べられる喜びを共有していきましょう。
 
-* Deployment instructions
+# 要件定義
+| 優先順位<br>（高：3、中：2、低：1）|    機能    |    目的    | 
+| ------- | -------------- | ----- | -----
+| 3 | ユーザー管理機能     | deviseを使用して登録、ログイン、ログアウトを管理するため |
+| 3 | 投稿機能 | 記事を投稿するため |
+| 3 | keep機能 | 記事を選別するため |
+| 2 | 記事一覧機能| 記事(投稿、keepで分類)を一覧でみるため |
+| 1 | プロフィール機能| 投稿者の個性を表現するため|
+| 1 | 記事編集機能| 記事の内容を編集するため | 
 
-* ...
+
+# 実装した機能
+- ユーザー登録機能
+- 投稿機能
+- 投稿一覧機能
+- keep選択機能
+
+
+# これから実装予定
+- keep一覧機能
+- プロフィール機能
+- 投稿編集機能
+
+* 作成者
+  ochi-ochi
+* 所属
+
+* E-mail
+
