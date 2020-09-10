@@ -60,3 +60,4 @@ gem 'devise'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 gem "font-awesome-sass"
+gem 'jquery-turbolinks'

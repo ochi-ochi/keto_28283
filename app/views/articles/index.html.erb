@@ -9,19 +9,38 @@
     
     <div></div>
     </header>
-    <div class="loginPage_contents">
-      <h1 class="h3 loginPage_contents_title">新しいマッチを見つけよう</h1>
-       <% if user_signed_in?%>
-          <div class="navi_btn">
-              <%= link_to "見送り", "#", class: "btn loginPage_contents_btn" %>
-              <%= link_to "キープ", "#", class: "btn loginPage_contents_btn" %>
-          </div>
-      <%else%> 
-          <div class="navi_btn">
-             <%= link_to "新規登録", new_user_registration_path, class: "btn loginPage_contents_btn" %>
-             <%= link_to "ログイン", new_user_session_path, class: "btn loginPage_contents_btn" %>
-          </div>
-     <%end%>
+
+  <% if user_signed_in?%>
+   <div id="tinderslide">
+      <ul>
+        <% @article.each do |article| %>
+            <li data-user_id="<%= article.id %>">
+              <%= image_tag article.image %>
+              <div class="like"></div>
+              <div class="dislike"></div>
+            </li>
+        <% end %>
+      </ul>
+      <div class="noUser">新規投稿がありません。</div>
+    </div>
+  </div>
+  <script>
+     $("#tinderslide").jTinder();
+     $('.actions .like, .actions .dislike').click(function(e){
+      	e.preventDefault();
+    	$("#tinderslide").jTinder($(this).attr('class'));
+   });
+</script>
+            <div class="navi_btn">
+                <%= link_to "見送り", "#", class: "btn loginPage_contents_btn" %>
+                <%= link_to "キープ", "#", class: "btn loginPage_contents_btn" %>
+            </div>
+        <%else%> 
+            <div class="navi_btn">
+               <%= link_to "新規登録", new_user_registration_path, class: "btn loginPage_contents_btn" %>
+               <%= link_to "ログイン", new_user_session_path, class: "btn loginPage_contents_btn" %>
+            </div>
+      <%end%>
     </div>
   </div>
 </div>
