@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
     before_action :move_to_index, except: [:index]
 
     def index
+        @article = Article.all
     end
 
     def new
