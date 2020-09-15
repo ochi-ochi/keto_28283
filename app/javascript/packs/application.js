@@ -10,6 +10,8 @@ require("channels")
 require('jquery')
 require("../jquery/jquery.jTinder.js")
 require("../jquery/jquery.transform2d.js")
+import '@fortawesome/fontawesome-free/js/all';
+
 
 //= require rails-ujs
 //= require turbolinks

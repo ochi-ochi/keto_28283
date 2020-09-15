@@ -1,13 +1,17 @@
 <div class="loginPage">
   <div class="container">
     <header>
-    <div></div>
-        <ul class="header_list">
-            <li><%= link_to "投稿", new_article_path %></li>
-            <li><%= link_to "マイページ", users_path %></li>
-        </ul>
+    <div class="header_list">
+        <div class="header_lists">
+            <div><%= link_to new_article_path, class: "food_list" do %>
+            <i class="fas fa-utensils fa-3x"></i>
+            <% end %></div>
+            <div><%= link_to users_path, class: "user_list" do%>
+            <i class="fas fa-user fa-3x"></i></div>
+            <%end%>
+        </div>
     
-    <div></div>
+    <div>
     </header>
 
   <% if user_signed_in?%>
@@ -31,10 +35,10 @@
     	$("#tinderslide").jTinder($(this).attr('class'));
    });
 </script>
-            <div class="navi_btn">
-                <%= link_to "見送り", "#", class: "btn loginPage_contents_btn" %>
-                <%= link_to "キープ", "#", class: "btn loginPage_contents_btn" %>
-            </div>
+             <div class="navi_btn">
+                <div class="btn loginPage_contents_btn">←見送り</div> 
+                <div class="btn loginPage_contents_btn">キープ→</div>
+            </div> 
         <%else%> 
             <div class="navi_btn">
                <%= link_to "新規登録", new_user_registration_path, class: "btn loginPage_contents_btn" %>
@@ -42,5 +46,10 @@
             </div>
       <%end%>
     </div>
+     <footer>
+      <p align="center">
+        Copyright ketokeep 2020.
+      </p>
+    </footer>
   </div>
 </div>

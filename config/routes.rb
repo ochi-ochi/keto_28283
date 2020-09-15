@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :articles
   root to: "articles#index"
   resources :users, only: :index
+  resources :reaction, only: :create
 end

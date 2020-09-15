@@ -1,8 +1,11 @@
-<div class="contents row">
-  <p><%= @name %>さんの投稿一覧</p>
-  <% @myarticle.each do |article| %>
-    <div class="content_post">
-        <%= image_tag article.image.variant(resize:'100x100')%>
-      <p>詳細</p>
+ <div class="mycontent"> 
+    <div class="mycontens">
+      <p>投稿一覧ページ</p>
+        <% @myarticle.each do |article| %>
+        <div class="content_post">
+          <%= image_tag article.image%>
+        </div>
+        <% end %>
     </div>
-  <% end %>
+</div>
+
