@@ -1,5 +1,5 @@
 .loginPage {
-    &_contents {
+      &_contents {
       height: 80vh;
       display: flex;
       flex-direction: column;
@@ -17,5 +17,21 @@
         background: #fd5068;
         color: #fff;
       }
+      }
     }
-  }
+    .header_lists{
+      display: flex;
+      justify-content: flex-end;
+      .food_list{
+        color:#fd5068;
+      } 
+      .user_list{
+        color:#fd5068;
+      }
+    }
+    .navi_btn{
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    
