@@ -29,11 +29,61 @@
     </div>
   </div>
   <script>
-     $("#tinderslide").jTinder();
-     $('.actions .like, .actions .dislike').click(function(e){
-      	e.preventDefault();
-    	$("#tinderslide").jTinder($(this).attr('class'));
-   });
+     <script>
+  // スワイプするユーザー数の定数を定義
+  var articleNum = <%= @article.length %>
+  var currentIndex = 0;
+  var postReaction = function (user_id, reaction, article_id) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        }
+    });
+    $.ajax({
+      type: "POST",
+      url: "<%= reaction_index_path %>",
+      data: {
+        user_id: user_id,
+        reaction: reaction,
+        article_id: article_id
+      },
+      success: function(j_data){
+        console.log("success")
+      }
+    });
+  }
+  $("#tinderslide").jTinder({
+    onDislike: function (item) {
+      currentIndex++;
+      checkUserNum();
+      var article_id = item[0].dataset.article_id
+      postReaction(article_id, 'dislike')
+    },
+    onLike: function (item) {
+      currentIndex++;
+      checkarticleNum();
+      var article_id = item[0].dataset.article_id
+      postReaction(article_id, 'like')
+    },
+    animationRevertSpeed: 200,
+    animationSpeed: 400,
+    threshold: 1,
+    likeSelector: '.like',
+    dislikeSelector: '.dislike'
+  });
+  $('.actions .like, .actions .dislike').click(function(e){
+    e.preventDefault();
+    $("#tinderslide").jTinder($(this).attr('class'));
+  });
+  function checkUserNum() {
+    // スワイプするユーザー数とスワイプした回数が同じになればaddClassする
+    if (currentUserIndex === usersNum){
+      $(".noUser").addClass("is-active");
+      $("#actionBtnArea").addClass("is-none")
+      return;
+    }
+  }
+</script>
 </script>
              <div class="navi_btn">
                 <div class="btn loginPage_contents_btn">←見送り</div> 
