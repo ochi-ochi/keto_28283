@@ -45,14 +45,14 @@ ActiveRecord::Schema.define(version: 2020_09_10_145534) do
   end
 
   create_table "reactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.integer "from_user", null: false
-    t.bigint "article_id_id", null: false
+    t.bigint "article_id", null: false
     t.integer "status", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id_id"], name: "index_reactions_on_article_id_id"
-    t.index ["user_id_id"], name: "index_reactions_on_user_id_id"
+    t.index ["article_id"], name: "index_reactions_on_article_id"
+    t.index ["user_id"], name: "index_reactions_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
