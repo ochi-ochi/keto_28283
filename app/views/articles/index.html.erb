@@ -40,7 +40,7 @@
     });
     $.ajax({
       type: "POST",
-      url: "<%= article_reactions_path %>",
+      url: "<% "/articles/#{@article.id}/reactions" %>",
       data: {
         user: user_id,
         reaction: reaction,
