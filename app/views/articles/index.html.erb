@@ -40,11 +40,11 @@
     });
     $.ajax({
       type: "POST",
-      url: "<%= reactions_index_path %>",
+      url: "<%= article_reactions_path %>",
       data: {
-        user_id: user_id,
+        user: user_id,
         reaction: reaction,
-        article_id: article_id
+        article: article_id
       },
       success: function(j_data){
         console.log("success")

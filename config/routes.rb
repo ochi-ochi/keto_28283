@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :articles do
-    resources :users, only: :index
+    resources :reactions, only: :create
   end
   
   root to: "articles#index"
   
-  resources :reactions, only: :create
-
+  
+  resources :users, only: :index
 end
