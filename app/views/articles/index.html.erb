@@ -29,7 +29,6 @@
     </div>
   </div>
   <script>
-     <script>
   // スワイプするユーザー数の定数を定義
   var articleNum = <%= @article.length %>
   var currentIndex = 0;
@@ -41,7 +40,7 @@
     });
     $.ajax({
       type: "POST",
-      url: "<%= reaction_index_path %>",
+      url: "<%= reactions_index_path %>",
       data: {
         user_id: user_id,
         reaction: reaction,
@@ -75,15 +74,14 @@
     e.preventDefault();
     $("#tinderslide").jTinder($(this).attr('class'));
   });
-  function checkUserNum() {
+  function checkarticleNum() {
     // スワイプするユーザー数とスワイプした回数が同じになればaddClassする
-    if (currentUserIndex === usersNum){
+    if (currentArticleIndex === usersNum){
       $(".noUser").addClass("is-active");
       $("#actionBtnArea").addClass("is-none")
       return;
     }
   }
-</script>
 </script>
              <div class="navi_btn">
                 <div class="btn loginPage_contents_btn">←見送り</div> 
