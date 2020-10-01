@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :articles
+  
+  resources :articles do
+    resources :users, only: :index
+  end
+  
   root to: "articles#index"
-  resources :users, only: :index
-  resources :reaction, only: :create
+  
+  resources :reactions, only: :create
+
 end
