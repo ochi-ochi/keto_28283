@@ -30,7 +30,7 @@
   </div>
   <script>
   // スワイプするユーザー数の定数を定義
-  var articleNum = <%= @article.length %>
+  var articleNum = "<%= @article.length %>"
   var currentIndex = 0;
   var postReaction = function (user_id, reaction, article_id) {
     $.ajaxSetup({
@@ -40,7 +40,7 @@
     });
     $.ajax({
       type: "POST",
-      url: "<% "/articles/#{@article.id}/reactions" %>",
+      url: "<% "/articles/{article_id}/reactions" %>",
       data: {
         user: user_id,
         reaction: reaction,
@@ -54,7 +54,7 @@
   $("#tinderslide").jTinder({
     onDislike: function (item) {
       currentIndex++;
-      checkUserNum();
+      checkarticleNum();
       var article_id = item[0].dataset.article_id
       postReaction(article_id, 'dislike')
     },
@@ -76,7 +76,7 @@
   });
   function checkarticleNum() {
     // スワイプするユーザー数とスワイプした回数が同じになればaddClassする
-    if (currentArticleIndex === usersNum){
+    if (currentIndex === articleNum){
       $(".noUser").addClass("is-active");
       $("#actionBtnArea").addClass("is-none")
       return;
