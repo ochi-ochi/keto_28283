@@ -43,12 +43,11 @@
       type: "POST",
       url: "/articles/" + article_id + "/reactions",
       data: {
-        user: user_id,
         reaction: reaction,
-        article: article_id
+        article_id: article_id
       },
       success: function(j_data){
-        console.log("success")
+        console.log(j_data)
       }
     });
   }

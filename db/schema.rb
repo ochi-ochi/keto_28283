@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_09_10_145534) do
 
   create_table "reactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "from_user", null: false
     t.bigint "article_id", null: false
     t.integer "status", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -69,4 +68,6 @@ ActiveRecord::Schema.define(version: 2020_09_10_145534) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reactions", "articles"
+  add_foreign_key "reactions", "users"
 end
