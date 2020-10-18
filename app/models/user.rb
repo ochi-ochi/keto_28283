@@ -2,5 +2,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :articles
-  belongs_to :reaction
+  has_many :reactions
 end
